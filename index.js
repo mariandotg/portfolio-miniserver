@@ -12,8 +12,6 @@ app.get('/', (req, res) => {
 app.post('/revalidate', async (req, res) => {
   const secret = req.query.secret
   console.log({secret})
-  const body = req.body;
-  console.log({ body });
   const tagsSet = new Set();
 
   if (secret !== process.env.REVALIDATE_SECRET) {
@@ -21,6 +19,9 @@ app.post('/revalidate', async (req, res) => {
   }
 
   try {
+    const body = req.body;
+    console.log({ body });
+    
     body.commits[0].modified.forEach((edits) => {
       if (edits.startsWith('projects')) {
         tagsSet.add('projects-en');
@@ -58,9 +59,13 @@ app.post('/revalidate', async (req, res) => {
     console.log(error)
   } finally {
     const arrayTags = Array.from(tagsSet);
-    arrayTags.forEach(async (tag) => (
-      await fetch(`${process.env.REVALIDATE_URL}?secret=${secret}&tag=${tag}`)
-    ))
+    arrayTags.forEach(async (tag) => {
+      try {
+        await fetch(`${process.env.REVALIDATE_URL}?secret=${secret}&tag=${tag}`);
+      } catch (error) {
+        console.error(`Error fetching for tag ${tag}:`, error);
+      }
+    })
     res.send("done")
   }
 })
