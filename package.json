@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-miniserver",
+  "version": "1.0.0",
+  "description": "Mini server for my portfolio project\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D used as a hotfix for my portfolio-project\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[ ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mariano Guillaume",
+  "license": "ISC"
+}
