@@ -21,7 +21,7 @@ app.post('/revalidate', async (req, res) => {
   }
 
   try {
-    body.payload.commits[0].modified.forEach((edits) => {
+    body.commits[0].modified.forEach((edits) => {
       if (edits.startsWith('projects')) {
         tagsSet.add('projects-en');
         tagsSet.add('projects-es');
@@ -32,7 +32,7 @@ app.post('/revalidate', async (req, res) => {
         tagsSet.add('social-media');
       }
     });
-    body.payload.commits[0].added.forEach((edits) => {
+    body.commits[0].added.forEach((edits) => {
       if (edits.startsWith('projects')) {
         tagsSet.add('projects-en');
         tagsSet.add('projects-es');
@@ -43,7 +43,7 @@ app.post('/revalidate', async (req, res) => {
         tagsSet.add('social-media');
       }
     });
-    body.payload.commits[0].removed.forEach((edits) => {
+    body.commits[0].removed.forEach((edits) => {
       if (edits.startsWith('projects')) {
         tagsSet.add('projects-en');
         tagsSet.add('projects-es');
