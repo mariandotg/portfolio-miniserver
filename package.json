@@ -1,11 +1,16 @@
 {
   "name": "portfolio-miniserver",
   "version": "1.0.0",
-  "description": "Mini server for my portfolio project\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D used as a hotfix for my portfolio-project\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[ ",
+  "description": "Mini server for my portfolio project used as a hotfix for my portfolio-project",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mariano Guillaume",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
