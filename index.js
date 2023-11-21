@@ -55,7 +55,7 @@ app.post('/revalidate', async (req, res) => {
       }
     });
   } catch(error) {
-    throw new Error(error)
+    console.log(error)
   } finally {
     const arrayTags = Array.from(tagsSet);
     arrayTags.forEach(async (tag) => (
