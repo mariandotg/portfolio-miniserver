@@ -1,4 +1,5 @@
 require('dotenv').config()
+const fetch = require("node-fetch");
 const express = require('express')
 const app = express()
 const port = 3000
@@ -21,7 +22,7 @@ app.post('/revalidate', async (req, res) => {
   try {
     const body = req.body;
     console.log({ body });
-    
+
     body.commits[0].modified.forEach((edits) => {
       if (edits.startsWith('projects')) {
         tagsSet.add('projects-en');
