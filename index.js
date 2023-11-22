@@ -25,35 +25,56 @@ app.post('/revalidate', async (req, res) => {
 
     body.commits[0].modified.forEach((edits) => {
       if (edits.startsWith('projects')) {
-        tagsSet.add('projects-en');
-        tagsSet.add('projects-es');
+        // tagsSet.add('projects-en');
+        // tagsSet.add('projects-es');
+        
+        tagsSet.add('/[lang]/projects');
+        tagsSet.add('/[lang]');
       } else if (edits.startsWith('articles')) {
-        tagsSet.add('articles-en');
-        tagsSet.add('articles-es');
+        // tagsSet.add('articles-en');
+        // tagsSet.add('articles-es');
+
+        tagsSet.add('/[lang]/blog');
+        tagsSet.add('/[lang]');
+        
       } else if (edits.startsWith('social-media')) {
-        tagsSet.add('social-media');
+        tagsSet.add('/[lang]');
       }
     });
     body.commits[0].added.forEach((edits) => {
       if (edits.startsWith('projects')) {
-        tagsSet.add('projects-en');
-        tagsSet.add('projects-es');
+        // tagsSet.add('projects-en');
+        // tagsSet.add('projects-es');
+        
+        tagsSet.add('/[lang]/projects');
+        tagsSet.add('/[lang]');
       } else if (edits.startsWith('articles')) {
-        tagsSet.add('articles-en');
-        tagsSet.add('articles-es');
+        // tagsSet.add('articles-en');
+        // tagsSet.add('articles-es');
+
+        tagsSet.add('/[lang]/blog');
+        tagsSet.add('/[lang]');
+        
       } else if (edits.startsWith('social-media')) {
-        tagsSet.add('social-media');
+        tagsSet.add('/[lang]');
       }
     });
     body.commits[0].removed.forEach((edits) => {
       if (edits.startsWith('projects')) {
-        tagsSet.add('projects-en');
-        tagsSet.add('projects-es');
+        // tagsSet.add('projects-en');
+        // tagsSet.add('projects-es');
+        
+        tagsSet.add('/[lang]/projects');
+        tagsSet.add('/[lang]');
       } else if (edits.startsWith('articles')) {
-        tagsSet.add('articles-en');
-        tagsSet.add('articles-es');
+        // tagsSet.add('articles-en');
+        // tagsSet.add('articles-es');
+
+        tagsSet.add('/[lang]/blog');
+        tagsSet.add('/[lang]');
+        
       } else if (edits.startsWith('social-media')) {
-        tagsSet.add('social-media');
+        tagsSet.add('/[lang]');
       }
     });
   } catch(error) {
